@@ -1,5 +1,3 @@
-// seed.js
-
 const mongoose = require("mongoose");
 const Product = require("./models/Product");
 const dotenv = require("dotenv");
@@ -18,86 +16,101 @@ mongoose
   .catch((err) => console.error("Eroare la conectarea la MongoDB:", err));
 
 const products = [
+  // Pullover
   {
     name: "Handgestrickter Pullover",
-    description: "Warmer handgestrickter Pullover aus Wolle.",
+    category: "pullover",
+    description: "Warmer handgestrickter Pullover für kalte Tage.",
     price: 59.99,
-    image:
-      "https://images.unsplash.com/photo-1555836721-6fec17bd948a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1541629007334-1f6c44705182",
     stock: 10,
   },
   {
-    name: "Handgestrickte Mütze",
-    description: "Weiche handgestrickte Mütze für kalte Tage.",
-    price: 19.99,
+    name: "Handgestrickter Pullover",
+    category: "pullover",
+    description: "Warmer handgestrickter Pullover für kalte Tage.",
+    price: 59.99,
+    image: "https://images.unsplash.com/photo-1541629007334-1f6c44705182",
+    stock: 10,
+  },
+  {
+    name: "Handgestrickter Pullover",
+    category: "pullover",
+    description: "Warmer handgestrickter Pullover für kalte Tage.",
+    price: 59.99,
+    image: "https://images.unsplash.com/photo-1541629007334-1f6c44705182",
+    stock: 10,
+  },
+  {
+    name: "Eleganter Pullover",
+    category: "pullover",
+    description: "Handgestrickter Pullover, perfekt für den Alltag.",
+    price: 49.99,
     image:
-      "https://images.unsplash.com/photo-1573581042946-359905ea3622?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1648946647674-3bcc0c6f3799?q=80&w=2024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stock: 15,
+  },
+  // Adaugă alte 8 produse pentru Pullover...
+
+  // Taschen
+  {
+    name: "Handgemachte Tasche",
+    category: "taschen",
+    description: "Elegante handgemachte Tasche für jeden Anlass.",
+    price: 39.99,
+    image: "https://images.unsplash.com/photo-1527383214149-cb7be04ae387",
     stock: 20,
   },
   {
-    name: "Handgestrickter Schal",
-    description: "Langer handgestrickter Schal aus feiner Wolle.",
-    price: 29.99,
+    name: "Stilvolle Tasche",
+    category: "taschen",
+    description: "Handgefertigte Tasche für Modebewusste.",
+    price: 45.99,
     image:
-      "https://images.unsplash.com/photo-1694447814836-c93ab70f7398?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    stock: 15,
+      "https://images.unsplash.com/photo-1595326995002-3c708e5caed7?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stock: 12,
   },
+  // Adaugă alte 8 produse pentru Taschen...
+
+  // Mützen
   {
-    name: "Handgestrickte Handschuhe",
-    description: "Bequeme handgestrickte Handschuhe.",
-    price: 24.99,
-    image:
-      "https://images.unsplash.com/photo-1706815957884-9cd434e152ea?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    stock: 25,
-  },
-  {
-    name: "Handgestrickte Socken",
-    description: "Warme handgestrickte Socken für den Winter.",
-    price: 14.99,
-    image:
-      "https://plus.unsplash.com/premium_photo-1664368832388-83036b512f4a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Handgestrickte Mütze",
+    category: "muetzen",
+    description: "Warme handgestrickte Mütze für kalte Tage.",
+    price: 19.99,
+    image: "https://images.unsplash.com/photo-1573581042946-359905ea3622",
     stock: 30,
   },
   {
-    name: "Handgestricktes Stirnband",
-    description: "Modisches handgestricktes Stirnband.",
-    price: 12.99,
+    name: "Wintermütze",
+    category: "muetzen",
+    description: "Handgefertigte Mütze für zusätzlichen Komfort.",
+    price: 24.99,
     image:
-      "https://images.unsplash.com/photo-1700676195086-81b936390de4?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1636569149691-9345c0f2673c?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stock: 25,
+  },
+  // Adaugă alte 8 produse pentru Mützen...
+
+  // Hosen
+  {
+    name: "Bequeme Hose",
+    category: "hosen",
+    description: "Handgefertigte Hose, die Stil und Komfort vereint.",
+    price: 39.99,
+    image: "https://images.unsplash.com/photo-1616178193482-4dad15347c26",
     stock: 18,
   },
   {
-    name: "Handgestrickte Babydecke",
-    description: "Weiche handgestrickte Decke für Babys.",
-    price: 39.99,
+    name: "Freizeithose",
+    category: "hosen",
+    description: "Handgemachte Hose für entspannte Tage.",
+    price: 34.99,
     image:
-      "https://plus.unsplash.com/premium_photo-1693011411069-0b7e39600876?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    stock: 8,
+      "https://images.unsplash.com/photo-1701318227304-24c9e8c0ee88?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stock: 20,
   },
-  {
-    name: "Handgestricktes Kleid",
-    description: "Elegantes handgestricktes Kleid für besondere Anlässe.",
-    price: 89.99,
-    image:
-      "https://images.unsplash.com/photo-1714729382668-7bc3bb261662?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    stock: 5,
-  },
-  {
-    name: "Handgestrickter Cardigan",
-    description: "Bequemer handgestrickter Cardigan für den Alltag.",
-    price: 69.99,
-    image:
-      "https://plus.unsplash.com/premium_photo-1664542157778-4dcccb04169e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    stock: 12,
-  },
-  {
-    name: "Handgestrickte Decke",
-    description: "Große handgestrickte Decke für kalte Abende.",
-    price: 99.99,
-    image:
-      "https://images.unsplash.com/photo-1622562177151-63dbb7acf757?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    stock: 7,
-  },
+  // Adaugă alte 8 produse pentru Hosen...
 ];
 
 const seedDB = async () => {
@@ -110,3 +123,5 @@ const seedDB = async () => {
     console.error("Eroare la popularea bazei de date:", err);
   }
 };
+
+seedDB();
