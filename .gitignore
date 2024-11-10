@@ -1,0 +1,4 @@
+node_modules/
+fraga-backend/node_modules/
+fraga-frontend/node_modules/
+.env
