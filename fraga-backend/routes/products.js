@@ -1,3 +1,5 @@
+// routes/products.js
+
 const express = require("express");
 const router = express.Router();
 const Product = require("../models/Product");
@@ -34,10 +36,12 @@ router.get("/:id", async (req, res) => {
 // Adaugă un produs nou (doar pentru admin)
 router.post("/", async (req, res) => {
   try {
-    const { name, description, price, image, stock, category } = req.body;
+    const { name, description, materials, price, image, stock, category } =
+      req.body;
     const newProduct = new Product({
       name,
       description,
+      materials,
       price,
       image,
       stock,
@@ -55,10 +59,11 @@ router.post("/", async (req, res) => {
 // Actualizează un produs (doar pentru admin)
 router.put("/:id", async (req, res) => {
   try {
-    const { name, description, price, image, stock, category } = req.body;
+    const { name, description, materials, price, image, stock, category } =
+      req.body;
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
-      { name, description, price, image, stock, category },
+      { name, description, materials, price, image, stock, category },
       { new: true } // Returnează produsul actualizat
     );
 

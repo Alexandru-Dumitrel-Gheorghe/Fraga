@@ -23,9 +23,9 @@ mongoose
   .catch((err) => console.error("Eroare la conectarea la MongoDB:", err));
 
 // Importă rutele
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./routes/auth"); // Asigură-te că ai aceste rute sau le poți ignora dacă nu sunt necesare
 const productRoutes = require("./routes/products");
-const orderRoutes = require("./routes/orders");
+const orderRoutes = require("./routes/orders"); // Asigură-te că ai aceste rute sau le poți ignora dacă nu sunt necesare
 
 // Utilizează rutele
 app.use("/api/auth", authRoutes);
